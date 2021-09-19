@@ -13,6 +13,6 @@ import com.store.joohnDeere.model.Produtos;
 @Repository
 public interface ProdutosRepository extends JpaRepository<Produtos, Long>  {
 	
-	public List<Produtos> findAllByNomeContainingIgnoreCase(String nome);
+	public List<Produtos> findAllByNomeProdutoContainingIgnoreCase(String nomeProduto);
 	public List<Produtos> findAll();
 }

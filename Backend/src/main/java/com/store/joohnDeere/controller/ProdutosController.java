@@ -42,8 +42,8 @@ public class ProdutosController {
 	
 
 	@GetMapping ("/produtos/{nome}")              
-	public ResponseEntity<List<Produtos>> GetByNome(@PathVariable String nome){                   
-		return ResponseEntity.ok(produtosRepository.findAllByNomeContainingIgnoreCase(nome));
+	public ResponseEntity<List<Produtos>> GetByNomeProduto(@PathVariable String nomeProduto){                   
+		return ResponseEntity.ok(produtosRepository.findAllByNomeProdutoContainingIgnoreCase(nomeProduto));
 	}
 	
 	//post
