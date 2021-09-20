@@ -12,6 +12,15 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { HomeComponent } from './home/home.component';
 import { AlertasComponent } from './alertas/alertas.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
+import { MenuComponent } from './menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
+import { CategoriasComponent } from './categorias/categorias.component';
+import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
+import { ProdutoComponent } from './produto/produto.component';
+import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +28,16 @@ import { AlertasComponent } from './alertas/alertas.component';
     EntrarComponent,
     CadastrarComponent,
     HomeComponent,
-    AlertasComponent
+    AlertasComponent,
+    ProdutoEditComponent,
+    CategoriaEditComponent,
+    MenuComponent,
+    FooterComponent,
+    CategoriasComponent,
+    CategoriaDeleteComponent,
+    ProdutoDeleteComponent,
+    ProdutoComponent,
+    UsuarioEditComponent
   ],
   imports: [
     BrowserModule,

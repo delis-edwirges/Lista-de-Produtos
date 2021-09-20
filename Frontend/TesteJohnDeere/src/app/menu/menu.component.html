@@ -1,0 +1,28 @@
+  
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand"><img class="rounded-circle" src="{{foto}}" width="45"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold">{{nomeusuario}}</a>
+          </li>
+         
+            <div class=" nav-item d-flex justify-content-center ">
+              <li class="me-2 rounded-pill">
+                <input [(ngModel)]='nomeProduto' (keyup)='findByNomeProduto()' type="text" class="form-control b-0 "
+                  id="nomeProduto" name="nomeProduto" placeholder="Pesquise um produto">
+              </li>
+           </div>
+          
+          <li class="nav-item me-2">
+            <a (click)='sair()'class="nav-link font-weight-bold "> Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

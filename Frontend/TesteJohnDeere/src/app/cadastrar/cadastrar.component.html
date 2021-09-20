@@ -1,7 +1,7 @@
 <div class="container-fluid ">
   <div class="row ">
     <div class="bg-success col-md-6 ">
-      <div class="text-light col-md-6">
+      <div class="text-light m-4 p-4 col-md-6">
         <h2>Faça seu cadastro</h2>
         <p>Preencha os campos a seguir para se cadastrar.</p>
       </div>
@@ -9,7 +9,7 @@
 
     <div class="col-md-6 ">
       <div class="col-ms-6 ">
-        <form>
+        <form class="m-2 p-2">
             <div class="form-group m-1">
               <label for="nomeusuario">Digite seu nome:</label>
               <input [(ngModel)]='usuario.nomeUsuario' class="form-control" type="text" name="nomeusuario"
@@ -18,7 +18,8 @@
             </div>
 
             <div class="form-group m-1">
-              <label for="dataNascimento">Data de nascimento:</label>
+              
+              <label for="dataNascimento">Data de nascimento: <small class="text-danger">Atenção aceitamos apenas maiores de 18 anos</small></label> 
               <input [(ngModel)]='usuario.dataNascimento' class="form-control" type="date" name="dataNascimento"
                 id="dataNascimento" placeholder="Digite sua data de nascimento.">
             </div>
@@ -30,14 +31,9 @@
             </div>
 
             <div class="form-group m-1">
-              <label for="email">Email</label>
-              <input class="form-control" type="email" name="email" id="email" placeholder="Digite seu email">
-            </div>
-
-            <div class="form-group m-1">
-              <label for="confirmEmail">Confirme seu Email:</label>
+              <label for="confirmEmail">Email:</label>
               <input [(ngModel)]='usuario.email' class="form-control" type="email" name="confirmEmail" id="confirmEmail"
-                placeholder="Confirme seu email.">
+                placeholder="Digite seu email.">
             </div>
 
             <div class="form-group m-1">
@@ -53,7 +49,7 @@
             </div>
 
          
-          <button type="submit" class="btn btn-secondary m-2" routerLink='/entrar'>Cancelar</button>
+          <button type="submit" class="btn btn-danger m-2" routerLink='/entrar'>Cancelar</button>
           <button type="submit" class="btn btn-dark m-2" (click)='cadastrar()'>Cadastrar</button>
         </form>
       </div>

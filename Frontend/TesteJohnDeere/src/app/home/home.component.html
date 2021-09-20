@@ -1,1 +1,101 @@
-<p>home works!</p>
+<div class="d-flex justify-content-center">
+  <div class="col-md-6 ">
+    <div class="feed p-2">
+
+      <div class="d-flex flex-row justify-content-center align-items-center my-4">
+        <button type="button" class="btn btn-dark text-light mr-2 font-weight-bold" data-bs-toggle="modal"
+          data-bs-target="#novoProduto" data-target="#novoProduto">Publicar novo
+          Produto</button>
+      </div>
+
+    </div>
+
+    <div class="bg-light" *ngFor='let item of listaProduto | orderBy : key : reverse'>
+
+      <div class="list-group">
+        <div href="#" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <div class="d-flex flex-row align-items-center feed-text px-2">
+              <h6 class="card-title">Categoria: {{item.categoria.categoria}}</h6>
+              <h5 class="mb-1">{{item.nomeProduto}}</h5>
+              <small class="text-muted time">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:
+                      'HH:mm'}}</small>
+            </div>
+            <p class="mb-1">{{item.descricao}}</p>
+            <p class="mb-1">{{item.preco | currency: 'BRL'}}</p>
+            <small class="text-muted font-weight-bold fs25">{{item.usuario.nomeUsuario}}</small>
+
+            <!-- Botãozinho de Editar -->
+            <div class="feed-icon px-2 social-action dropdown pull-right">
+              <button data-toggle="dropdown" class=" btn bgroxoclaro btn-lg  ">
+                <i class="fa fa-ellipsis-v text-black-50"></i>
+              </button>
+              <ul class="dropdown-menu m-t-xs font-weight-bold">
+                <li><a [routerLink]="['/produto-edit',item.id]" class="bg-success" href="">Editar</a></li>
+                <li><a [routerLink]="['/produto-delete',item.id]" class="bg-danger" href="">Apagar</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+        <!-- Nova Postagem -->
+        <div class="modal fade font-weight-bold " id="novoProduto" tabindex="-1" role="dialog"
+          aria-labelledby="ModaldeTituloCentralizado" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title font-weight-bold" id="ModaldeTituloCentralizado">Novo Produto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar">
+
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="nomeProduto">Nome do Produto</label>
+                  <input [(ngModel)]='produto.nomeProduto' type="text" class="form-control" name="nomeProduto"
+                    id="nomeProduto" placeholder="Digite o nome do Produto">
+                </div>
+                <div class="form-group">
+                  <label for="descricao">Descrição do Produto</label>
+                  <input [(ngModel)]='produto.descricao' type="text" class="form-control" name="descricao"
+                    id="descricao" placeholder="Digite a descrição do produto ">
+                </div>
+                <div class="form-group">
+                  <label for="preco">Preço</label>
+                  <input [(ngModel)]='produto.preco' type="number" class="form-control" name="preco" id="preco"
+                    placeholder="Digite o preço do produto">
+                </div>
+
+                <div class="form-group">
+                  <label for="disponivel">Disponibilidade do Produto</label>
+                  <textarea [(ngModel)]='produto.disponivel' class="form-control" name="disponivel" id="disponivel"
+                    rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="categorias">Escolha uma categoria ou
+                    <a class="text-success text-decoration-none" routerLink='/categorias'>Cadastre uma Nova</a></label>
+
+                  <select class="form-control" name="categoria" id="categoria" [(ngModel)]='idCategoria'
+                    (change)='findByIdCategoria'>
+                    <option *ngFor='let item of listaCategoria' value="{{item.id}}">{{item.categoria}</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary"(click)='publicar()' >Publicar</button>
+   
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+  </div>
+</div>

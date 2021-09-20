@@ -25,4 +25,33 @@ export class AuthService {
     return this.http.post<Usuario>('http://localhost:8443/usuarios/cadastrar', usuario)
 
   }
+
+  getAllUsuarios(): Observable<Usuario[]>{
+    return this.http.get<Usuario[]>(`http://localhost:8443/usuarios/`)
+  }
+
+  getByIdUsuario(id: number): Observable<Usuario>{
+    return this.http.get<Usuario>(`http://localhost:8443/usuarios/${id}`)
+  }
+
+
+  logado(){
+    let ok:boolean = false
+
+    if (environment.token != ''){
+      ok = true
+    }
+
+
+    return ok
+  }
+
+
+
+  atualizar(usuario: Usuario):Observable<Usuario>{
+    return this.http.put<Usuario>('http://localhost:8443/usuarios/', usuario)
+    }
+
+
+
 }
