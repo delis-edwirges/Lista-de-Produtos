@@ -13,19 +13,19 @@
           <form>
             <div class="form-group m-1">
               <label>E-mail</label>
-              <input type="text" class="form-control" placeholder="E-mail">
+              <input [(ngModel)]='usuarioLogin.email' class="form-control " type="text" name="email" id="email"placeholder="E-mail">
             </div>
             <div class="form-group m-1">
               <label>Senha</label>
-              <input type="password" class="form-control" placeholder="Senha">
+              <input [(ngModel)]='usuarioLogin.senha' class="form-control" type="password" name="senha"
+              id="senha" placeholder="Senha">
             </div>
             <button type="submit" class="btn btn-dark m-2" (click)='entrar()'>Entrar</button>
-            <button type="submit" class="btn btn-secondary m-2"routerLink='/cadastrar'>Cadastrar</button>
+            <button type="submit" class="btn btn-secondary m-2"routerLink='/cadastrar'>Cadastre-se</button>
           </form>
         </div>
       </div>
     </div>
   </div>
-
 
 </div>

@@ -1,1 +1,64 @@
-<p>cadastrar works!</p>
+<div class="container-fluid ">
+  <div class="row ">
+    <div class="bg-success col-md-6 ">
+      <div class="text-light col-md-6">
+        <h2>Faça seu cadastro</h2>
+        <p>Preencha os campos a seguir para se cadastrar.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 ">
+      <div class="col-ms-6 ">
+        <form>
+            <div class="form-group m-1">
+              <label for="nomeusuario">Digite seu nome:</label>
+              <input [(ngModel)]='usuario.nomeUsuario' class="form-control" type="text" name="nomeusuario"
+                id="nomeusuario" placeholder="Digite seu nome.">
+
+            </div>
+
+            <div class="form-group m-1">
+              <label for="dataNascimento">Data de nascimento:</label>
+              <input [(ngModel)]='usuario.dataNascimento' class="form-control" type="date" name="dataNascimento"
+                id="dataNascimento" placeholder="Digite sua data de nascimento.">
+            </div>
+
+            <div class="form-group m-1">
+              <label for="foto">Link da sua foto de perfil:</label>
+              <input [(ngModel)]='usuario.foto' class="form-control" type="text" name="foto" id="foto"
+                placeholder="Link do seu perfil">
+            </div>
+
+            <div class="form-group m-1">
+              <label for="email">Email</label>
+              <input class="form-control" type="email" name="email" id="email" placeholder="Digite seu email">
+            </div>
+
+            <div class="form-group m-1">
+              <label for="confirmEmail">Confirme seu Email:</label>
+              <input [(ngModel)]='usuario.email' class="form-control" type="email" name="confirmEmail" id="confirmEmail"
+                placeholder="Confirme seu email.">
+            </div>
+
+            <div class="form-group m-1">
+              <label for="senha">Senha:</label>
+              <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha"
+                placeholder="Digite sua senha.">
+            </div>
+
+            <div class="form-group m-1">
+              <label for="confirmSenha">Confirme sua senha:</label>
+              <input [(ngModel)]='usuario.senha' class="form-control" type="password" name="confirmSenha"
+                id="confirmSenha" placeholder="Confirme sua senha.">
+            </div>
+
+         
+          <button type="submit" class="btn btn-secondary m-2" routerLink='/entrar'>Cancelar</button>
+          <button type="submit" class="btn btn-dark m-2" (click)='cadastrar()'>Cadastrar</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</div>
