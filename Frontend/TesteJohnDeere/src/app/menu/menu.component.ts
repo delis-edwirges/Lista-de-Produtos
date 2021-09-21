@@ -21,7 +21,7 @@ export class MenuComponent implements OnInit {
   idUsuario = environment.id
   foto = environment.foto
   id = environment.id
-  tipo = environment.tipoUsuario
+
 
   
   produto: Produto = new Produto()

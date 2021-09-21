@@ -4,6 +4,8 @@ export const environment = {
   nomeUsuario:'',
   id: 0,
   foto: '',
-  tipoUsuario:'',
+  dataNascimento: '',
+  estoque:'',
+  disponivel:'',
   data:'',
 };

@@ -12,6 +12,7 @@ import { CategoriaService } from '../service/categoria.service';
 })
 export class CategoriasComponent implements OnInit {
 
+ 
   categoria: Categoria = new Categoria()
   listaCategoria: Categoria[]
 

@@ -1,1 +1,47 @@
-<p>produto-edit works!</p>
+<div class="container mt-5 mb-5">
+
+    <div class="row">
+        <div class="col-md-12 font-weight-bold">
+          <h1 class="text-center font-weight-bold">Atualizar Vaga</h1>
+        </div>
+      </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-12">
+
+
+<div class="form-group font-weight-bold">
+    <label for="titulo">Produto</label>
+    <input [(ngModel)]='produto.nomeProduto'  type="text" class="form-control" name="tema" id="tema" placeholder="Digite o nome da vaga">
+  </div>
+  <div class="form-group font-weight-bold">
+    <label for="titulo">Descrição</label>
+    <input [(ngModel)]='produto.descricao'  type="text" class="form-control" name="especificacao" id="especificacao" placeholder="Digite a especificação">
+  </div>
+  <div class="form-group font-weight-bold">
+    <label for="titulo">Preço</label>
+    <input [(ngModel)]='produto.preco'  type="number" class="form-control" name="valor" id="valor" placeholder="Digite o valor">
+  </div>
+
+  <div class="form-group font-weight-bold">
+    <label for="texto">Estoque</label>
+    <textarea [(ngModel)]='produto.estoque' class="form-control" name="texto" id="texto" rows="3"></textarea>
+  </div>
+
+  <div class="form-group font-weight-bold">
+    <label for="categoria">Escolha uma categoria</label>
+
+    <select class="form-control" name="categoria" id="categoria" [(ngModel)]='idCategoria' (change)='findByIdCategoria'>
+      <option *ngFor= 'let item of listaCategoria' value="{{item.id}}">{{item.nomeCategoria}}</option>
+    </select>
+  </div>
+
+<div class="font-weight-bold ">
+  <button type="button" class=" btn bg-danger font-weight-bold" routerLink='/home'>Cancelar</button>
+  <button type="button" class=" btn bg-success font-weight-bold " (click)='atualizar()' >Publicar</button>
+</div>
+
+
+
+</div>
+</div>
+</div>

@@ -11,5 +11,5 @@ import com.store.joohnDeere.model.Categoria;
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 
-	public List <Categoria> findAllByCategoriaContainingIgnoreCase (String categoria);
+	public List <Categoria> findAllByNomeCategoriaContainingIgnoreCase (String nomeCategoria);
 }

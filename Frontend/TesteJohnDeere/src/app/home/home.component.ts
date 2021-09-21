@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   prod2: Produto = new Produto()
   foto = environment.foto
   nome = environment.nomeUsuario
-  tipo = environment.tipoUsuario
+
 
   key = 'data'
   reverse = true

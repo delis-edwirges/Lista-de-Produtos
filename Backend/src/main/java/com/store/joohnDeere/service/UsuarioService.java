@@ -90,7 +90,7 @@ public class UsuarioService {
 				usuarioLogin.get().setId(email.get().getId());
 				usuarioLogin.get().setFoto(email.get().getFoto());
 				usuarioLogin.get().setEmail(email.get().getEmail());
-				usuarioLogin.get().setTipoUsuario(email.get().getTipoUsuario());
+				
 				
 				
 

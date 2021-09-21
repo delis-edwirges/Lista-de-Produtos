@@ -34,7 +34,7 @@ public class Categoria {
 	@NotNull (message= "O atributo Categoria é obrigatório!")
 	@Size (min=1, max=400, message="O atributo categoria deve conter no mínimo 1 caracter e no máximo 400")
 	@Column (name = "Categoria")
-	private String categoria;
+	private String nomeCategoria;
 	
 	@NotNull (message= "O atributo Sobre é obrigatório!")
 	@Size (min=1, max=2000, message="O atributo sobre deve conter no mínimo 1 caracter e no máximo 2000")

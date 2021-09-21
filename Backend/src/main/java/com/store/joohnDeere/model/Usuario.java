@@ -41,7 +41,6 @@ public class Usuario {
 	@JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate dataNascimento; 
 
-	private String tipoUsuario;
 	
 	@NotNull(message="O email é obrigatório!")
 	@Size(min=6 , max=100 )
