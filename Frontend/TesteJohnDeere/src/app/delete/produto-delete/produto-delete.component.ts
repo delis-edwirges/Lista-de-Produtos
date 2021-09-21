@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Categoria } from 'src/app/model/Categoria';
+import { Produto } from 'src/app/model/Produto';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { CategoriaService } from 'src/app/service/categoria.service';
+import { ProdutoService } from 'src/app/service/produto.service';
 import { environment } from 'src/environments/environment.prod';
 
 @Component({
@@ -12,37 +13,45 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class ProdutoDeleteComponent implements OnInit {
 
-  categoria: Categoria = new Categoria
-  idCategoria: number
+  produto: Produto = new Produto()
+  idProduto: number
+
 
   constructor(
     private router: Router,
-    private categoriaService: CategoriaService,
     private route: ActivatedRoute,
+    private produtoService: ProdutoService,
+    private categoriaService: CategoriaService,
     private alertas: AlertasService
-  ) {}
-
+  ) { }
 
   ngOnInit(){
-    if (environment.token == ''){
-      alert('Sua sessão expirou')
+
+
+    window.scroll(0,0)
+
+    if(environment.token == ''){
+      this.alertas.showAlertInfo('Sua sessão expirou, faça login novamente.')
       this.router.navigate(['/entrar'])
     }
 
-    this.idCategoria = this.route.snapshot.params['id']
-    this.findByIdCategoria(this.idCategoria)
+    this.idProduto = this.route.snapshot.params['id']
+    this.findByIdProduto(this.idProduto)
+
+
   }
 
-  findByIdCategoria(id:number){
-    this.categoriaService.getByIdCategoria(id).subscribe((resp:Categoria)=>{
-      this.categoria = resp
+  findByIdProduto(id: number){
+    this.produtoService.getByIdProduto(id).subscribe((resp: Produto)=>{
+      this.produto = resp
     })
-    }
+  }
+
 
   apagar(){
-    this.categoriaService.deleteCategoria(this.idCategoria).subscribe(()=>{
-      this.alertas.showAlertSuccess('Categoria apagada com sucesso.')
-      this.router.navigate(['/categorias'])
+      this.produtoService.deleteProduto(this.idProduto).subscribe(()=>{
+     this.alertas.showAlertSuccess('Produto apagado com sucesso!')
+      this.router.navigate(['/home'])
     })
   }
 

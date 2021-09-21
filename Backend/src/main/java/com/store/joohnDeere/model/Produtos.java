@@ -45,11 +45,10 @@ public class Produtos {
 	@NotNull (message= "O atributo Preço é obrigatório!")
 	private Double preco;
 	
-	@NotNull (message= "O atributo Estoque é obrigatório!")
+
 	@PositiveOrZero
 	private long estoque;
 	
-	@NotNull (message= "O atributo Disponivel é obrigatório!")
 	private Boolean disponivel;
 	
 	@Temporal(TemporalType.TIMESTAMP)         
